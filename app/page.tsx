@@ -12,7 +12,21 @@ import { App } from "./app";
 const Page = () => {
   return (
     <LiveblocksProvider
-      publicApiKey={process.env.NEXT_PUBLIC_LIVEBLOCK || ""}
+      authEndpoint="/api/liveblocks-auth"
+      resolveUsers={async ({ userIds }) => {
+        const searchParams = new URLSearchParams(
+          userIds.map((userId) => ["userIds", userId])
+        );
+        const response = await fetch(`/api/users?${searchParams}`);
+        console.log('response', response)
+
+        if (!response.ok) {
+          throw new Error("Problem resolving users");
+        }
+
+        const users = await response.json();
+        return users;
+      }}
     >
       <RoomProvider
         initialPresence={{ cursor: null }}

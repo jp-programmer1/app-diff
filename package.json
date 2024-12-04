@@ -13,6 +13,7 @@
     "@blocknote/mantine": "^0.20.0",
     "@blocknote/react": "^0.20.0",
     "@liveblocks/client": "^2.13.0",
+    "@liveblocks/node": "^2.13.1",
     "@liveblocks/react": "^2.13.0",
     "@liveblocks/yjs": "^2.13.0",
     "@radix-ui/react-avatar": "^1.1.1",
