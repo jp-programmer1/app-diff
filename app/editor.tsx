@@ -29,6 +29,13 @@ export const Editor = () => {
             oldValue={currentPipeline}
             newValue={newPipeline}
             splitView={true}
+            styles={{
+              contentText: {
+                whiteSpace: "pre-wrap",
+                fontFamily: "monospace",
+                fontSize: "12px",
+              }
+            }}
           />
         </div>
       )}
