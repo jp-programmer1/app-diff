@@ -7,13 +7,13 @@ import { USER_INFO } from "../dummy-users";
  * https://liveblocks.io/docs/authentication
  */
 
+console.log(" process.env.LIVEBLOCKS_SECRET_KEY",  process.env.LIVEBLOCKS_SECRET_KEY);
+
 const liveblocks = new Liveblocks({
   secret: process.env.LIVEBLOCKS_SECRET_KEY!
 });
 
 export async function POST() {
-  console.log(" process.env.LIVEBLOCKS_SECRET_KEY",  process.env.LIVEBLOCKS_SECRET_KEY);
-  
   console.log("ola");
   
   if (!process.env.LIVEBLOCKS_SECRET_KEY) {
