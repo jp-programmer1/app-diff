@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import ReactDiffViewer from "react-diff-viewer";
+import ReactDiffViewer, { DiffMethod } from "react-diff-viewer";
 import { cn } from "@/lib/utils";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/theme-github";
@@ -29,6 +29,9 @@ export const Editor = () => {
             oldValue={currentPipeline}
             newValue={newPipeline}
             splitView={true}
+            extraLinesSurroundingDiff={10}
+            showDiffOnly={true}
+            compareMethod={DiffMethod.WORDS}
             styles={{
               contentText: {
                 whiteSpace: "pre-wrap",
