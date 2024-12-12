@@ -5,7 +5,7 @@ import { Editor } from "./editor";
 import { Cursors } from "../cursor";
 import { useMyPresence } from "@liveblocks/react/suspense";
 const Page = () => {
-  const [myPresence, updateMyPresence] = useMyPresence();
+  const updateMyPresence = useMyPresence()[1];
 
   const onPointerMove = useCallback(
     (e: React.PointerEvent) => {

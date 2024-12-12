@@ -34,21 +34,6 @@ export const KeepForm = ({
   
   const [value] = useDebounce(copyData?.content, 300);
 
-  if (!open) return null;
-
-
-
-  useEffect(() => {
-    if (keeps.length === 0) return;
-  }, [open, keeps]);
-
-  useEffect(() => {
-    console.log("saving data");
-    updateKeeps({
-      content: value,
-    }, 'content');
-  }, [value]);
-
   const updateKeeps = useMutation(
     ({ storage }, value, key: 'content' | 'title') => {
       const newKeeps = [...keeps];
@@ -58,6 +43,15 @@ export const KeepForm = ({
     },
     [keeps, data]
   );
+
+  useEffect(() => {
+    console.log("saving data");
+    updateKeeps({
+      content: value,
+    }, 'content');
+  }, [value]);
+
+
 
   const removeKeep = useMutation(
     ({ storage }) => {
@@ -76,7 +70,7 @@ export const KeepForm = ({
     extensions: [StarterKit, Document, Paragraph, Text],
     content: data?.content || "",
     onUpdate: ({ editor }) => {
-      setCopyData((current: any) => ({
+      setCopyData((current: Keep) => ({
         ...current,
         content: editor.getHTML(),
       }));

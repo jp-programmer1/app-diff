@@ -15,7 +15,7 @@ import './style.css';
 import { Keep } from "@/types/keep.type";
 
 const Page = () => {
-  const [myPresence, updateMyPresence] = useMyPresence();
+  const updateMyPresence = useMyPresence()[1];
 
   const { keeps } = useStorage((s) => ({
     keeps: s.keeps,
