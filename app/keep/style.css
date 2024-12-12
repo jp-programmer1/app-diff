@@ -1,0 +1,7 @@
+.tiptap.ProseMirror{
+  height: 60vh;
+  overflow: auto;
+}
+.tiptap.ProseMirror:focus-visible {
+  outline: unset;
+}

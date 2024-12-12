@@ -33,7 +33,6 @@ export const Cursor = ({ connectionId }: { connectionId: number }) => {
           backgroundColor: connectionIdToColor(connectionId),
         }}
       >
-        ke
       </div>
     </div>
   );

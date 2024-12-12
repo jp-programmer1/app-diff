@@ -1,11 +1,10 @@
+'use client';
 import React, { useCallback } from "react";
-import { Header } from "./header";
+import { Header } from "../header";
 import { Editor } from "./editor";
-import { Cursors } from "./cursor";
+import { Cursors } from "../cursor";
 import { useMyPresence } from "@liveblocks/react/suspense";
-
-export const App = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Page = () => {
   const [myPresence, updateMyPresence] = useMyPresence();
 
   const onPointerMove = useCallback(
@@ -21,9 +20,11 @@ export const App = () => {
         <Cursors />
       </div>
       <section className="flex flex-col gap-5">
-        <Header />
+        <Header appName="JSON Diff" />
         <Editor />
       </section>
     </div>
-  );
-};
+  )
+}
+
+export default Page;

@@ -17,7 +17,14 @@
     "@liveblocks/react": "^2.13.0",
     "@liveblocks/yjs": "^2.13.0",
     "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
+    "@tiptap/extension-document": "^2.10.3",
+    "@tiptap/extension-paragraph": "^2.10.3",
+    "@tiptap/extension-text": "^2.10.3",
+    "@tiptap/pm": "^2.10.3",
+    "@tiptap/react": "^2.10.3",
+    "@tiptap/starter-kit": "^2.10.3",
     "ace-builds": "^1.36.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -30,6 +37,7 @@
     "react-json-editor-ajrm": "^2.5.14",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "use-debounce": "^10.0.4",
     "yjs": "^13.6.20"
   },
   "devDependencies": {

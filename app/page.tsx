@@ -1,43 +1,16 @@
-"use client";
-
+import Link from "next/link";
 import React from "react";
-import {
-  ClientSideSuspense,
-  LiveblocksProvider,
-  RoomProvider,
-} from "@liveblocks/react/suspense";
-import { App } from "./app";
-
 
 const Page = () => {
   return (
-    <LiveblocksProvider
-      authEndpoint="/api/liveblocks-auth"
-      resolveUsers={async ({ userIds }) => {
-        const searchParams = new URLSearchParams(
-          userIds.map((userId) => ["userIds", userId])
-        );
-        const response = await fetch(`/api/users?${searchParams}`);
-        console.log('response', response)
-
-        if (!response.ok) {
-          throw new Error("Problem resolving users");
-        }
-
-        const users = await response.json();
-        return users;
-      }}
-    >
-      <RoomProvider
-        initialPresence={{ cursor: null }}
-        id="my-room"
-        initialStorage={{ newPipeline: "", currentPipeline: "" }}
-      >
-        <ClientSideSuspense fallback={<div>Loading…</div>}>
-          <App />
-        </ClientSideSuspense>
-      </RoomProvider>
-    </LiveblocksProvider>
+    <section className="flex flex-col justify-center items-center h-[90vh] gap-4">
+      <Link href={'/json-diff'} className="p-5 border w-[200px] flex items-center justify-center border-gray-500 cursor-pointer transition-colors hover:bg-gray-500 hover:text-white">
+        JSON DIFF
+      </Link>
+      <Link href={'/keep'} className="p-5 border w-[200px] flex items-center justify-center border-gray-500 cursor-pointer transition-colors hover:bg-gray-500 hover:text-white">
+        NOTAS
+      </Link>
+    </section>
   );
 };
 

@@ -24,7 +24,7 @@ export const Editor = () => {
   return (
     <>
       {activeCompare && (
-        <div className="p-4 h-[80vh] overflow-auto">
+        <div className="p-2 h-[80vh] overflow-auto">
           <ReactDiffViewer
             oldValue={currentPipeline}
             newValue={newPipeline}
