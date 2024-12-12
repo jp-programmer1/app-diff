@@ -142,7 +142,7 @@ export const KeepForm = ({
         </DialogHeader>
         <DialogFooter>
           <div className="flex items-center gap-2">
-            <Button variant={"default"}>Cerrar</Button>
+            <Button variant={"default"} onClick={onClose}>Cerrar</Button>
           </div>
         </DialogFooter>
       </DialogContent>
